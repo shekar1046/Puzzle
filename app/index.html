@@ -1,56 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    
-    
+<html>
+    <head>
+        <title>Image Shuffle</title>
+        <script src="Angular/angular.js"></script>
+        <script src="Controllers/script.js"></script>
 
+    </head>
+    <body ng-app="ImageShuffle" ng-controller="ImageController">
+            <div>
+                    <h3>{{cars.carName}}</h3>
+                    <img ng-src="{{cars.photo}}">
+                </div>
+        <h3>Puzzle</h3>
+        <form ng-submit="showImage(img)">
+            Image <br><br>
+            <input type="file" ng-model="img.pic"><br><br>
+           <button>submit</button>
+           
 
-</head>
-<body ng-app="DemoApp" ng-controller="HomeController">
-   
-
-    
-            <div class="grid-container" ng-repeat="item in images">
-                    <div >
-                        <img ng-src="{{item.pic}}">
-                    </div>
-                    <div >
-                            <img ng-src="{{item.pic}}">
-                        </div>
-                        <div >
-                                <img ng-src="{{item.pic}}">
-                            </div>
-                            <div >
-                                    <img ng-src="{{item.pic}}">
-                                </div> 
-                                <div >
-                                        <img ng-src="{{item.pic}}">
-                                    </div>
-                                    <div >
-                                            <img ng-src="{{item.pic}}">
-                                        </div>
-                                        <div >
-                                                <img ng-src="{{item.pic}}">
-                                            </div>
-                                            <div>
-                                                    <img ng-src="{{item.pic}}">
-                                                </div>
-                                                <div>
-                                                        <img ng-src="{{item.pic}}">
-                                                    </div>
-
-                  </div>
-            
+        </form>
         
-    
-
-
-
-        <script src="scripts/angular.js"></script>
-        <script src="Modules/DemoApp.js"></script>
-        <script src="Controllers/HomeController.js"></script>
         
-</body>
+        
+    </body>
+</html>
