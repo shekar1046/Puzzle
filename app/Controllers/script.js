@@ -1,14 +1,16 @@
 var app=angular.module("ImageShuffle", []);
 app.controller("ImageController", function($scope){
-    $scope.cars={
-        carName:"Audi",
-        photo:"Cars/audi.jpeg"
-    };
+    $scope.images = [];
+        
+    $scope.imageUpload = function(element){
+        var reader = new FileReader();
+        reader.onload = $scope.imageIsLoaded;
+        reader.readAsDataURL(element.files[0]);
+    }
     
-
-  
-    $scope.showImage=function(img){
-        $scope.pic=img.pic;
-        $scope.title=img.title;
+    $scope.imageIsLoaded = function(e){
+        $scope.$apply(function() {
+            $scope.images.push(e.target.result);
+        });
     }
 });

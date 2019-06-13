@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ImageShuffle">
     <head>
         <title>Image Shuffle</title>
         <script src="Angular/angular.js"></script>
         <script src="Controllers/script.js"></script>
 
     </head>
-    <body ng-app="ImageShuffle" ng-controller="ImageController">
-            <div>
-                    <h3>{{cars.carName}}</h3>
-                    <img ng-src="{{cars.photo}}">
+    <body ng-controller="ImageController">
+         
+            <div ng-repeat="image in images">
+                    <img  ng-src="{{image}}" />
                 </div>
-        <h3>Puzzle</h3>
-        <form ng-submit="showImage(img)">
-            Image <br><br>
-            <input type="file" ng-model="img.pic"><br><br>
-           <button>submit</button>
-           
-
-        </form>
-        
+                <form>
+                <input type="file" ng-model-instant onchange="angular.element(this).scope().imageUpload(this)">
+                </form>
         
         
     </body>
