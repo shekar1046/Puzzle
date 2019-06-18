@@ -1,4 +1,3 @@
-var app=angular.module("ImageShuffle", []);
 app.controller("ImageController", function($scope){
     $scope.images = [];
         
@@ -12,5 +11,11 @@ app.controller("ImageController", function($scope){
         $scope.$apply(function() {
             $scope.images.push(e.target.result);
         });
+    }
+    $scope.ImagePuzzle=function(e){
+        $scope.x=event.clientX;
+        $scope.y=event.clientY;
+        $scope.images.push(e.target.result +x+" "+y);
+
     }
 });
