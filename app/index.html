@@ -7,13 +7,14 @@
 
     </head>
     <body ng-controller="ImageController">
+
          
-                <form >
+                <div>
                 <input type="file" ng-model-instant onchange="angular.element(this).scope().imageUpload(this)">
-                <br><br>
+                </div>
                
-                </form>
-                <br><br>
+                
+            
 
                 <div class="img" ng-model="images" ng-repeat="item in images">
                     <img  ng-src="{{item}}">
